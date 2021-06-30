@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling Algorithms</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Indie+Flower'>
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Truculenta:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Combo&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="wrapper">
+        <input type="checkbox" name="nav-check" id="nav-check" />
+        <section class="sec-intro" id="sec-intro">
+            <div class="content">
+                <br><br>
+                <h1>Introduction to Scheduling algorithms</h1>
+                <br><br><br>
+
+                <div class="info">
+                    <p> CPU Scheduling is a process of determining which process will own CPU for execution while another process is on hold. The main task of CPU scheduling is to make sure that whenever
+                        <br> the CPU remains idle, the OS at least select one of the processes available in the ready queue for execution. The selection process will be carried out by the CPU scheduler. It selects one of the processes in memory <br>that
+                        are ready for execution.
+                        <br>There are two types of Scheduling algorithms:</p>
+                    <img src="img1.png">
+                </div>
+                <br><br>
+                <div class="type1">
+                    <h2>Preemptive Scheduling</h2>
+                    <p>In Preemptive Scheduling, the tasks are mostly assigned with their priorities. Sometimes it is important to run a task with a higher priority before another lower priority task, even if the lower priority task is still running. The
+                        lower priority task holds for some time and resumes when the higher priority task finishes its execution.
+                    </p>
+                    <br><br>
+                    <h2>Non-Preemptive Scheduling</h2>
+                    <p>In this type of scheduling method, the CPU has been allocated to a specific process. The process that keeps the CPU busy will release the CPU either by switching context or terminating. It is the only method that can be used for various
+                        hardware platforms. That's because it doesn't need special hardware (for example, a timer) like preemptive scheduling.
+                    </p><br><br>
+                    <h3>When scheduling is Preemptive or Non-Preemptive?</h3>
+                    <p>To determine if scheduling is preemptive or non-preemptive, consider these four parameters:
+                    </p> <br>
+                    <ul style="list-style-type:square">
+                        <li>A process switches from the running to the waiting state.</li>
+                        <li>Specific process switches from the running state to the ready state.</li>
+                        <li>Specific process switches from the waiting state to the ready state.</li>
+                        <li>Process finished its execution and terminated.</li>
+                    </ul>
+                    <br>
+                    <p>
+                        Only conditions 1 and 4 apply, the scheduling is called non- preemptive.</p><br>
+
+                    <p>All other scheduling are preemptive.</p>
+
+
+                </div>
+                <br><br><br>
+
+            </div>
+        </section>
+        <section class="sec-a1" id="sec-a1">
+            <div class="content">
+                <br><br>
+                <h1>First Come First Serve(FCFS)</h1>
+                <p>First Come First Serve is the full form of FCFS. It is the easiest and most simple CPU scheduling algorithm. In this type of algorithm, the process which requests the CPU gets the CPU allocation first. This scheduling method can be managed
+                    with a FIFO queue.</p>
+                <p>As the process enters the ready queue, its PCB (Process Control Block) is linked with the tail of the queue. So, when CPU becomes free, it should be assigned to the process at the beginning of the queue.</p>
+                <br><br>
+                <p>Characteristics of FCFS method:</p>
+                <ul style="list-style-type: circle;">
+                    <li>It offers non-preemptive and pre-emptive scheduling algorithm.</li>
+                    <li>Jobs are always executed on a first-come, first-serve basis</li>
+                    <li>It is easy to implement and use.</li>
+                    <li>However, this method is poor in performance, and the general wait time is quite high.</li>
+
+                </ul>
+            </div>
+        </section>
+        <section class="sec-a2" id="sec-a2">
+            <div class="content">
+                <br><br>
+                <h1>Shortest Job First Pre-emptive(SJFP)</h1>
+                <p>Also,known as Shortest Remaining Time.In this method, the process will be allocated to the task, which is closest to its completion. This method prevents a newer ready state process from holding the completion of an older process.</p>
+                <br><br>
+                <p>Characteristics of SJFP method:</p>
+                <ul style="list-style-type: circle;">
+                    <li> This method is mostly applied in batch environments where short jobs are required to be given preference.</li>
+                    <li>This is not an ideal method to implement it in a shared system where the required CPU time is unknown. </li>
+                    <li> Associate with each process as the length of its next CPU burst. So that operating system uses these lengths, which helps to schedule the process with the shortest possible time.</li>
+
+                </ul>
+            </div>
+        </section>
+        <section class="sec-a3" id="sec-a3">
+            <div class="content">
+                <br><br>
+                <h1>Shortest Job First Non Pre-emptive(SJFN)</h1>
+                <p>It is another type of scheduling technique in which the process with the shortest burst time is given to CPU first for execution.</p>
+                <br><br>
+                <p>Characteristics of SJFN method:.</p>
+                <ul style="list-style-type: disc;">
+                    <li> The average waiting time by using SJF is less than FCFS. </li>
+                    <li> Since processes with shorter burst time is executed first hence the turnaround time is also short by using SJF. </li>
+                    <li> SJF gives an improved output by selecting a shorter job first to execute. </li>
+                    <li>This scheduling technique is useful for batch-time processing, where waiting for jobs to complete is not critical. </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sec-a4" id="sec-a4">
+            <div class="content">
+                <br><br>
+                <h1>Longest Job First Pre-emptive(LJFP)</h1>
+                <p>With this algorithm, the process having the maximum remaining time is processed first. In this, we will check for the maximum remaining time after an interval of time(say 1 unit) that is there another process having more Burst Time arrived
+                    up to that time.</p>
+                <BR>
+                <BR>
+                <p>How does LJFP Scheduling work?</p>
+                <ul style="list-style-type:circle;">
+                    <li> The First step is to sort the processes according to their Arrival time in increasing order</li>
+                    <li>The next step is to choose the process that least arrival time but having the most Burst Time. After that process it for 1 unit. After one unit you need to check if up to that time of execution; any other process is arrived or not
+                    </li>
+                    <li>Just repeat the above steps until the execution of all processes. </li>
+                </ul>
+                <BR>
+                <BR>
+                <p>Characteristics of LRTF Scheduling</p>
+                <ul style="list-style-type:circle;">
+                    <li>It is a CPU scheduling algorithm that is used to determine the process to be executed first among all incoming processes in a systematic way. </li>
+                    <li>This algorithm follows the preemptive approach because in this CPU is allocated to any process only for a fixed slice of time. </li>
+                    <li>In this algorithm, processes are selected on the basis of the highest burst time(the one with the highest burst time is processed first) and this process runs till the fixed slice of time. After that, the selection process takes place
+                        again. </li>
+                    <li>Due to the high value of the average waiting time, this algorithm is not optimal. </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sec-a5" id="sec-a5">
+            <div class="content">
+                <br><br>
+                <h1>Longest Job First Non Pre-emptive(LJFN)</h1>
+                <p>This algorithm mainly keeps the track of Burst time of all processes that are available at the arrival time itself and then it will assign the processor to the process having the longest burst time. In this algorithm, once a process starts
+                    its execution then it cannot be interrupted in between its processing. Any other process can be executed only after the assigned process has completed its processing and has been terminated.</p>
+                <p>This scheduling is similar to the SJF scheduling algorithm. But, in this scheduling algorithm, the priority is given to the process having the longest burst time.</p>
+                <br><br>
+                <p>The Drawbacks of LJFN are:</p>
+                <ul style="list-style-type:circle;">
+                    <li>This algorithm leads to the reduction of processing speed due to which there is a reduction in the efficiency and utilization of the system. </li>
+                    <li>Due to this algorithm, for a given set of processes, the average waiting time and average turn-around time increase. </li>
+                    <li>This algorithm leads to the convoy effect. </li>
+                    <li>With this algorithm, there is a possibility that a short process may never get executed and the system keeps on executing the long processes. </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sec-a6" id="sec-a6">
+            <div class="content">
+                <br><br>
+                <h1>Round Robin(RR)</h1>
+                <p>Round robin is the oldest, simplest scheduling algorithm. The name of this algorithm comes from the round-robin principle, where each person gets an equal share of something in turn. It is mostly used for scheduling algorithms in multitasking.
+                    This algorithm method helps for starvation free execution of processes.</p>
+                <br><br>
+                <p>Characteristics of Round Robin:</p>
+                <ul style="list-style-type:circle;">
+                    <li>Round robin is a hybrid model which is clock-driven </li>
+                    <li>Time slice should be minimum, which is assigned for a specific task to be processed. However, it may vary for different processes. </li>
+                    <li>It is a real time system which responds to the event within a specific time limit. </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sec-a7" id="sec-a7">
+            <div class="content">
+                <br><br>
+                <h1>Priority Pre-emptive(PP)</h1>
+                <p>In Preemptive Priority Scheduling, at the time of arrival of a process in the ready queue, its Priority is compared with the priority of the other processes present in the ready queue as well as with the one which is being executed by
+                    the CPU at that point of time. The One with the highest priority among all the available processes will be given the CPU next.</p>
+                <p>Once all the jobs get available in the ready queue, the algorithm will behave as non-preemptive priority scheduling, which means the job scheduled will run till the completion and no preemption will be done.</p>
+                <br><br>
+                <p>Characteristics of PP:</p>
+                <ul style="list-style-type:circle;">
+                    <li>A CPU algorithm that schedules processes based on priority. </li>
+                    <li>It used in Operating systems for performing batch processes. </li>
+                    <li>If two jobs having the same priority are READY, it works on a FIRST COME, FIRST SERVED basis. </li>
+                    <li> In priority scheduling, a number is assigned to each process that indicates its priority level.
+                    </li>
+                    <li>Lower the number, higher is the priority. </li>
+                    <li>In this type of scheduling algorithm, if a newer process arrives, that is having a higher priority than the currently running process, then the currently running process is preempted. </li>
+
+                </ul>
+            </div>
+        </section>
+        <section class="sec-a8" id="sec-a8">
+            <div class="content">
+                <br><br>
+                <h1>Priority Non Preemptive(PN)</h1>
+                <p>In the Non Preemptive Priority scheduling, The Processes are scheduled according to the priority number assigned to them. Once the process gets scheduled, it will run till the completion. Generally, the lower the priority number, the higher
+                    is the priority of the process.</p>
+
+                <br><br>
+                <p>Characteristics of PN:</p>
+                <ul style="list-style-type:circle;">
+                    <li>A CPU algorithm that schedules processes based on priority. </li>
+                    <li>It used in Operating systems for performing batch processes. </li>
+                    <li>If two jobs having the same priority are READY, it works on a FIRST COME, FIRST SERVED basis. </li>
+                    <li> In priority scheduling, a number is assigned to each process that indicates its priority level.
+                    </li>
+                    <li>Lower the number, higher is the priority. </li>
+
+
+                </ul>
+            </div>
+        </section>
+        <section class="sec-a9" id="sec-a9">
+            <div class="content">
+                <br><br>
+                <h1>Highest Response Ratio Next(HRRN)</h1>
+                <p>As HRRN is a non-preemptive scheduling algorithm so in case if there is any process that is currently in execution with the CPU and during its execution, if any new process arrives in the memory with burst time smaller than the currently
+                    running process then at that time the currently running process will not be put in the ready queue & complete its execution without any interruption.
+                </p>
+                <p>HRRN is basically the modification of Shortest Job Next(SJN) in order to reduce the problem of starvation.
+
+                </p>
+                <p>In the HRRN scheduling algorithm, the CPU is assigned to the next process that has the highest response ratio and not to the process having less burst time.</p>
+                <p>Response Ratio = (W+S)/S<br> Where,
+                    <br> W=It indicates the Waiting Time.<br> S=It indicates the Service time that is Burst Time.<br>
+                </p>
+                <br><br><br>
+                <p>Algorithm of HRRN is:</p>
+                <ul style="list-style-type:circle;">
+                    <li> In the HRNN scheduling algorithm, once a process is selected for execution will run until its completion. </li>
+                    <li> The first step is to calculate the waiting time for all the processes. Waiting time simply means the sum of the time spent waiting in the ready queue by processes.
+
+                    </li>
+                    <li>Processes get scheduled each time for execution in order to find the response ratio for each available process. </li>
+                    <li> Then after the process having the highest response ratio is executed first by the processor. </li>
+                    <li> In a case, if two processes have the same response ratio then the tie is broken using the FCFS scheduling algorithm. </li>
+                </ul>
+                <br><br><br>
+                <p>Characteristics of HRRN are:</p>
+                <ul style="list-style-type:circle;">
+                    <li>This algorithm not only favors shorter job but it also concern the waiting time of the longer jobs. </li>
+                    <li>Its mode is non preemptive hence context switching is minimal in this algorithm. </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sec-home" id="sec-home">
+            <div class="content">
+                <br><br><br>
+                <h2><a href="#sec-intro">What are Scheduling Algorithms?</a></h2>
+                <br><br><br>
+                <h2>Various Scheduling Algorithms:</h2>
+                <h3><a href="#sec-a1">First Come First Serve(FCFS)</a></h3>
+                <h3><a href="#sec-a2">Shortest Job First Pre-emptive(SJFP)</a></h3>
+                <h3><a href="#sec-a3">Shortest Job First(Non-Preemptive)</a></h3>
+                <h3><a href="#sec-a4">Longest Job First(Preemptive)</a></h3>
+                <h3><a href="#sec-a5">Longest Job First(Non-Preemptive)</a></h3>
+                <h3><a href="#sec-a6">Round Robin</a></h3>
+                <h3><a href="#sec-a7">Priority(Preemptive)</a></h3>
+                <h3><a href="#sec-a8">Priority(Non-Preemptive)</a></h3>
+                <h3><a href="#sec-a9">Highest Response Ratio Next(HRRN)</a></h3>
+            </div>
+        </section>
+        <nav role="navigation">
+            <label for="nav-check"></label>
+            <ul class="navigation">
+                <li><a href="#sec-home">Home</a></li>
+                <li><a href="#sec-intro">Introduction</a></li>
+                <li><a href="homepage.html">Visualize algorithms</a></li>
+                <li><a href="#sec-a1">First Come First Serve(FCFS)</a></li>
+                <li><a href="#sec-a2">Shortest Job First Pre-emptive(SJFP)</a></li>
+                <li><a href="#sec-a3">Shortest Job First(Non-Preemptive)</a></li>
+                <li><a href="#sec-a4">Longest Job First(Preemptive)</a></li>
+                <li><a href="#sec-a5">Longest Job First(Non-Preemptive)</a></li>
+                <li><a href="#sec-a6">Round Robin</a></li>
+                <li><a href="#sec-a7">Priority(Preemptive)</a></li>
+                <li><a href="#sec-a8">Priority(Non-Preemptive)</a></li>
+                <li><a href="#sec-a9">Highest Response Ratio Next(HRRN)</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- partial -->
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

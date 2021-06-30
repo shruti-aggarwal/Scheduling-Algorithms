@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling Algorithms</title>
+    <link rel="icon" href="favicon.png">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: #ECF0F1;
+    }
+    
+    .wrapper {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .name {
+        font-family: monospace;
+        font-size: 1em;
+        position: absolute;
+        right: 0px;
+        bottom: 5px;
+        color: #2F4F4F;
+        font-weight: bold;
+    }
+    
+    .typing-demo {
+        width: 26ch;
+        animation: typing 2s steps(26), blink .5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+        font-family: monospace;
+        font-size: 2em;
+    }
+    
+    @keyframes typing {
+        from {
+            width: 0
+        }
+    }
+    
+    @keyframes blink {
+        50% {
+            border-color: transparent
+        }
+    }
+    
+    .load {
+        position: absolute;
+        top: 50%;
+        left: 68%;
+        transform: translate(-50%, -50%);
+        /*change these sizes to fit into your project*/
+        width: 60px;
+        height: 60px;
+    }
+    
+    .load hr {
+        border: 0;
+        margin: 0;
+        width: 40%;
+        height: 40%;
+        position: absolute;
+        border-radius: 50%;
+        animation: spin 2s ease infinite
+    }
+    
+    .load :first-child {
+        background: #19A68C;
+        animation-delay: -1.5s
+    }
+    
+    .load :nth-child(2) {
+        background: #F63D3A;
+        animation-delay: -1s
+    }
+    
+    .load :nth-child(3) {
+        background: #F58E84;
+        animation-delay: -0.5s
+    }
+    
+    .load :last-child {
+        background: #193B48
+    }
+    
+    @keyframes spin {
+        0%,
+        100% {
+            transform: translate(0)
+        }
+        25% {
+            transform: translate(160%)
+        }
+        50% {
+            transform: translate(160%, 160%)
+        }
+        75% {
+            transform: translate(0, 160%)
+        }
+    }
+</style>
+
+<body>
+    <div class="name"></div>
+    <div class="wrapper">
+        <div class="typing-demo">
+            CPU Scheduling Visualiser.
+
+        </div>
+
+    </div>
+    <a href="index2.html">
+        <div class="load">
+            <hr/>
+            <hr/>
+            <hr/>
+            <hr/>
+        </div>
+
+    </a>
+    <div class="name">
+        Sanya Goyal(2K19/CO/340)
+        
+    </div>
+</body>
+
+</html>
